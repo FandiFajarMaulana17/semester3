@@ -1,0 +1,33 @@
+@startuml perkuliahan_horizontal
+
+actor Mahasiswa as mhs
+actor Dosen as dosen
+actor Admin as admin
+
+package "Sistem Perkuliahan" {
+    usecase "Menerima Perjadwalan Perkuliahan" as U1
+    usecase "Memilih Mata Kuliah" as U2
+    usecase "Memilih Ruang Perkuliahan" as U3
+    usecase "Melihat Jadwal Kuliah" as U4
+    usecase "Mengajar Mata Kuliah" as U5
+    usecase "Menginput Nilai UTS" as U6
+    usecase "Menginput Nilai UAS" as U7
+    usecase "Melihat Nilai UTS dan UAS" as U8
+}
+
+mhs --> U1 : "Input jadwal kuliah"
+mhs --> U2 : "Pilih mata kuliah"
+mhs --> U3 : "Pilih ruang"
+mhs --> U4 : "Lihat jadwal"
+mhs --> U8 : "Lihat nilai UTS & UAS"
+dosen --> U5 : "Mengajar"
+dosen --> U6 : "Input nilai UTS"
+dosen --> U7 : "Input nilai UAS"
+admin --> U1 : "Atur jadwal kuliah"
+admin --> U2 : "Atur mata kuliah"
+admin --> U3 : "Atur ruang kuliah"
+admin --> U4 : "Kelola jadwal"
+admin --> U6 : "Kelola nilai UTS"
+admin --> U7 : "Kelola nilai UAS"
+
+@enduml
